@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7laba</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        h1{
+            font-style: italic;
+            color: #555;
+            text-align: center;
+        }
+        h2 {
+            font-style: italic;
+            color: #555;
+        }
+        p {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        code {
+            background-color: #e8e8e8;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ВАРИАНТ 1</h1>
+    <h2>1 задание (Задача с числами 5)</h2>
+    <p id="result"></p> 
+    <script>
+        function percentage(total, percent) {
+            return (total * percent) / 100;
+        }
+        let total = 100; 
+        let percent = 15;
+        let result = percentage(total, percent);
+        document.getElementById('result').textContent = `Результат: ${result}`; 
+    </script>
+    <h2>2 задание (Задача со строками 3)</h2>
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <script>
+        function contains(str, subStr) {
+            return str.includes(subStr);
+        }
+
+        const result1 = contains("Здравствуй, УИР-1!", "Айша");
+        const result2 = contains("JavaScript 7 лаба ", "7");
+        document.getElementById('result1').textContent = `"Айша" в "Здравствуй, УИР-1!": ${result1}`;
+        document.getElementById('result2').textContent = `"7" в "JavaScript 7 лаба": ${result2}`;
+    </script>
+    <h2>3 задание (Задача с булевыми 1)</h2>
+    <p id="result3"></p>
+    <p id="result4"></p>
+    <script>
+        function andNot(a, b) {
+            return a && !b;
+        }
+
+        const result3 = andNot(true, false);
+        document.getElementById('result3').textContent = `true AND NOT false: ${result3}`;
+
+        const result4 = andNot(true, true);
+        document.getElementById('result4').textContent = `true AND NOT true: ${result4}`;
+    </script>
+    <h2>4 задание (Задача с объектами 4)</h2>
+    <p id="result5"></p>
+    <script>
+        function removeKey(obj, key) {
+            delete obj[key];
+            return obj;
+        }
+
+        let obj1 = {a: 1, b: 2, c: 3};
+        let modifiedObj1 = removeKey(obj1, 'b');
+        document.getElementById('result5').textContent = `Удаленный объект (b): ${JSON.stringify(modifiedObj1)}`;
+    </script>
+    <h2>5 задание (Задача с массивами 3)</h2>
+    <p id="result6"></p>
+    <script>
+        function getLength(array) {
+            return array.length;
+        }
+
+        let array1 = [1, 2, 3, 4, 5];
+        let length1 = getLength(array1);
+        document.getElementById('result6').textContent = `Длина массива: ${length1}`;
+    </script>
+    <h2>6 задание (Сумма чисел массива 2)</h2>
+    <p id="result7"></p>
+    <script>
+        function sumArray(array) {
+            return array.reduce((sum, num) => sum + num, 0);
+        }
+
+        let array2 = [1, 2, 3, 4, 5];
+        let sum = sumArray(array2);
+        document.getElementById('result7').textContent = `Сумма чисел массива: ${sum}`;
+    </script>
+    <h2>7 задание (Добавление префикса к строкам 4)</h2>
+    <p id="result8"></p>
+    <script>
+        function addPrefix(array, prefix) {
+            return array.map(str => prefix + str);
+        }
+
+        let array3 = ["Айша", "Дарья", "Евгений", "Анастасия"];
+        let prefixedArray = addPrefix(array3, "студент: ");
+        document.getElementById('result8').textContent = `Массив с префиксами: ${JSON.stringify(prefixedArray)}`;
+    </script>
+</body>
+</html>
